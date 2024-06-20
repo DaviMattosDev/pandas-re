@@ -2,7 +2,7 @@ from faker import Faker
 import random
 from openpyxl import Workbook
 
-fake = Faker('pt_BR')  # Configuração para gerar dados em português do Brasil
+fake = Faker('pt_BR')  # Configuração para gerar dados em português
 
 
 def generate_clients(num_clients):
@@ -15,7 +15,7 @@ def generate_clients(num_clients):
             'endereco': fake.address(),
             'cidade': fake.city(),
             'estado': fake.state(),
-            'cep': fake.postcode(),  # Corrigido para fake.postcode()
+            'cep': fake.postcode(),
             'idade': random.randint(18, 80),
             'sexo': random.choice(['Masculino', 'Feminino']),
             'profissao': fake.job(),
@@ -29,7 +29,7 @@ def generate_clients(num_clients):
 
 # Tentar gerar os dados e salvar em um arquivo Excel
 try:
-    # Gerar 300 clientes
+    # Gerar clientes
     clientes = generate_clients(1000000)
 
     # Criar um novo workbook do Excel
